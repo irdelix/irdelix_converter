@@ -1,0 +1,107 @@
+Index: .idea/.idea.WinFormsApp2/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"97dc7897-b1f7-4129-b08f-7b905213210a\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/.idea.WinFormsApp2/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/.idea.WinFormsApp2/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/obj/Release/net9.0-windows/WinFormsApp2.AssemblyInfo.cs\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/obj/Release/net9.0-windows/WinFormsApp2.AssemblyInfo.cs\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/obj/Release/net9.0-windows/WinFormsApp2.AssemblyInfoInputs.cache\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/obj/Release/net9.0-windows/WinFormsApp2.AssemblyInfoInputs.cache\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/obj/Release/net9.0-windows/WinFormsApp2.csproj.FileListAbsolute.txt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/obj/Release/net9.0-windows/WinFormsApp2.csproj.FileListAbsolute.txt\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/obj/Release/net9.0-windows/apphost.exe\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/obj/Release/net9.0-windows/apphost.exe\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/obj/Release/net9.0-windows/irdelix_converter.dll\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/obj/Release/net9.0-windows/irdelix_converter.dll\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/obj/Release/net9.0-windows/irdelix_converter.pdb\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/obj/Release/net9.0-windows/irdelix_converter.pdb\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/obj/Release/net9.0-windows/ref/irdelix_converter.dll\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/obj/Release/net9.0-windows/ref/irdelix_converter.dll\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/obj/Release/net9.0-windows/refint/irdelix_converter.dll\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/obj/Release/net9.0-windows/refint/irdelix_converter.dll\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/obj/rider.project.model.nuget.info\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/obj/rider.project.model.nuget.info\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"DpaMonitoringSettings\">\r\n    <option name=\"firstShow\" value=\"false\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;irdelix&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/irdelix/irdelix_converter.git&quot;,\r\n    &quot;accountId&quot;: &quot;17530b23-6bc5-409c-8d07-fc68e5eec7ad&quot;\r\n  }\r\n}</component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6b80fb264a6de24ddf710e6f265f867f0dd31316725a82641986f80e22cb8/FileDialog.cs\" root0=\"FORCE_HIGHLIGHTING\" />\r\n  </component>\r\n  <component name=\"MetaFilesCheckinStateConfiguration\" checkMetaFiles=\"true\" />\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;customColor&quot;: &quot;&quot;,\r\n  &quot;associatedIndex&quot;: 3\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"3AkXVLIsOx5UlLUekEFsZWXwidS\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;.NET Project.WinFormsApp2.executor&quot;: &quot;Debug&quot;,\r\n    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,\r\n    &quot;Publish to folder.Publish WinFormsApp2 to folder.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\" selected=\".NET Project.WinFormsApp2\">\r\n    <configuration name=\"Publish WinFormsApp2 to folder\" type=\"DotNetFolderPublish\" factoryName=\"Publish to folder\">\r\n      <riderPublish configuration=\"Release\" platform=\"Any CPU\" produce_single_file=\"true\" self_contained=\"true\" target_folder=\"$PROJECT_DIR$/bin/Release/net9.0-windows/win-x64/publish\" target_framework=\"net9.0-windows\" uuid_high=\"3474682829154306969\" uuid_low=\"-4988484329159955464\">\r\n        <runtimes>\r\n          <item value=\"win-x64\" />\r\n        </runtimes>\r\n      </riderPublish>\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"WinFormsApp2\" type=\"DotNetProject\" factoryName=\".NET Project\">\r\n      <option name=\"EXE_PATH\" value=\"\" />\r\n      <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"\" />\r\n      <option name=\"PASS_PARENT_ENVS\" value=\"1\" />\r\n      <option name=\"ENV_FILE_PATHS\" value=\"\" />\r\n      <option name=\"REDIRECT_INPUT_PATH\" value=\"\" />\r\n      <option name=\"MIXED_MODE_DEBUG\" value=\"0\" />\r\n      <option name=\"USE_MONO\" value=\"0\" />\r\n      <option name=\"RUNTIME_ARGUMENTS\" value=\"\" />\r\n      <option name=\"AUTO_ATTACH_CHILDREN\" value=\"0\" />\r\n      <option name=\"PROJECT_PATH\" value=\"$PROJECT_DIR$/WinFormsApp2.csproj\" />\r\n      <option name=\"PROJECT_EXE_PATH_TRACKING\" value=\"1\" />\r\n      <option name=\"PROJECT_ARGUMENTS_TRACKING\" value=\"1\" />\r\n      <option name=\"PROJECT_WORKING_DIRECTORY_TRACKING\" value=\"1\" />\r\n      <option name=\"PROJECT_KIND\" value=\"DotNetCore\" />\r\n      <option name=\"PROJECT_TFM\" value=\"\" />\r\n      <method v=\"2\">\r\n        <option name=\"Build\" />\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"97dc7897-b1f7-4129-b08f-7b905213210a\" name=\"Changes\" comment=\"\" />\r\n      <created>1773137565645</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1773137565645</updated>\r\n      <workItem from=\"1773137568382\" duration=\"7251000\" />\r\n      <workItem from=\"1773298723552\" duration=\"387000\" />\r\n      <workItem from=\"1773301670590\" duration=\"3586000\" />\r\n      <workItem from=\"1773393936122\" duration=\"965000\" />\r\n      <workItem from=\"1773403473359\" duration=\"2750000\" />\r\n      <workItem from=\"1774350900725\" duration=\"93000\" />\r\n      <workItem from=\"1775562211927\" duration=\"25000\" />\r\n      <workItem from=\"1776240638759\" duration=\"16000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"first push\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1773403659298</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1773403659298</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"second push\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1773403718981</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1773403718981</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"edit\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1773404747074</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1773404747074</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"4\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"UnityCheckinConfiguration\" checkUnsavedScenes=\"true\" />\r\n  <component name=\"UnityProjectConfiguration\" hasMinimizedUI=\"false\" />\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"CLEAR_INITIAL_COMMIT_MESSAGE\" value=\"true\" />\r\n    <MESSAGE value=\"first push\" />\r\n    <MESSAGE value=\"second push\" />\r\n    <MESSAGE value=\"edit\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"edit\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint enabled=\"true\" type=\"DotNet_Exception_Breakpoints\">\r\n          <properties exception=\"System.OperationCanceledException\" breakIfHandledByOtherCode=\"false\" displayValue=\"System.OperationCanceledException\" />\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </breakpoint>\r\n        <breakpoint enabled=\"true\" type=\"DotNet_Exception_Breakpoints\">\r\n          <properties exception=\"System.Threading.Tasks.TaskCanceledException\" breakIfHandledByOtherCode=\"false\" displayValue=\"System.Threading.Tasks.TaskCanceledException\" />\r\n          <option name=\"timeStamp\" value=\"2\" />\r\n        </breakpoint>\r\n        <breakpoint enabled=\"true\" type=\"DotNet_Exception_Breakpoints\">\r\n          <properties exception=\"System.Threading.ThreadAbortException\" breakIfHandledByOtherCode=\"false\" displayValue=\"System.Threading.ThreadAbortException\" />\r\n          <option name=\"timeStamp\" value=\"3\" />\r\n        </breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+===================================================================
+diff --git a/.idea/.idea.WinFormsApp2/.idea/workspace.xml b/.idea/.idea.WinFormsApp2/.idea/workspace.xml
+--- a/.idea/.idea.WinFormsApp2/.idea/workspace.xml	(revision 5e9c73657b1d27c1836403147cb627688e04c578)
++++ b/.idea/.idea.WinFormsApp2/.idea/workspace.xml	(date 1777640990468)
+@@ -4,18 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="97dc7897-b1f7-4129-b08f-7b905213210a" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WinFormsApp2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinFormsApp2/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/obj/Release/net9.0-windows/WinFormsApp2.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Release/net9.0-windows/WinFormsApp2.AssemblyInfo.cs" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/obj/Release/net9.0-windows/WinFormsApp2.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Release/net9.0-windows/WinFormsApp2.AssemblyInfoInputs.cache" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/obj/Release/net9.0-windows/WinFormsApp2.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Release/net9.0-windows/WinFormsApp2.csproj.FileListAbsolute.txt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/obj/Release/net9.0-windows/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Release/net9.0-windows/apphost.exe" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/obj/Release/net9.0-windows/irdelix_converter.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Release/net9.0-windows/irdelix_converter.dll" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/obj/Release/net9.0-windows/irdelix_converter.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Release/net9.0-windows/irdelix_converter.pdb" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/obj/Release/net9.0-windows/ref/irdelix_converter.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Release/net9.0-windows/ref/irdelix_converter.dll" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/obj/Release/net9.0-windows/refint/irdelix_converter.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Release/net9.0-windows/refint/irdelix_converter.dll" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" afterDir="false" />
+-    </list>
++    <list default="true" id="97dc7897-b1f7-4129-b08f-7b905213210a" name="Changes" comment="" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -52,25 +41,25 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;.NET Project.WinFormsApp2.executor&quot;: &quot;Debug&quot;,
+-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+-    &quot;Publish to folder.Publish WinFormsApp2 to folder.executor&quot;: &quot;Run&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    ".NET Project.WinFormsApp2.executor": "Run",
++    "ModuleVcsDetector.initialDetectionPerformed": "true",
++    "Publish to folder.Publish WinFormsApp2 to folder.executor": "Run",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
++    "RunOnceActivity.git.unshallow": "true",
++    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
++    "git-widget-placeholder": "master",
++    "ignore.virus.scanning.warn.message": "true",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "nodejs_package_manager_path": "npm",
++    "vue.rearranger.settings.migration": "true"
+   }
+-}</component>
++}]]></component>
+   <component name="RunManager" selected=".NET Project.WinFormsApp2">
+     <configuration name="Publish WinFormsApp2 to folder" type="DotNetFolderPublish" factoryName="Publish to folder">
+       <riderPublish configuration="Release" platform="Any CPU" produce_single_file="true" self_contained="true" target_folder="$PROJECT_DIR$/bin/Release/net9.0-windows/win-x64/publish" target_framework="net9.0-windows" uuid_high="3474682829154306969" uuid_low="-4988484329159955464">
+@@ -117,6 +106,7 @@
+       <workItem from="1774350900725" duration="93000" />
+       <workItem from="1775562211927" duration="25000" />
+       <workItem from="1776240638759" duration="16000" />
++      <workItem from="1777640628824" duration="360000" />
+     </task>
+     <task id="LOCAL-00001" summary="first push">
+       <option name="closed" value="true" />
+@@ -142,7 +132,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1773404747074</updated>
+     </task>
+-    <option name="localTasksCounter" value="4" />
++    <task id="LOCAL-00004" summary="push">
++      <option name="closed" value="true" />
++      <created>1777640695372</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1777640695372</updated>
++    </task>
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -155,7 +153,8 @@
+     <MESSAGE value="first push" />
+     <MESSAGE value="second push" />
+     <MESSAGE value="edit" />
+-    <option name="LAST_COMMIT_MESSAGE" value="edit" />
++    <MESSAGE value="push" />
++    <option name="LAST_COMMIT_MESSAGE" value="push" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
