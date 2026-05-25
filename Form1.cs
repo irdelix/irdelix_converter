@@ -404,8 +404,7 @@ namespace ConverterApp
             return int.Parse(Regex.Match(resString, @"^\d+").Value);
         }
 
-        private readonly string spotifyClientId = "ca8f9097e0814d25a2c5822a9d424752";
-        private readonly string spotifyClientSecret = "a4a2be454cb44d9faa15e5b93c7ba834";
+
 
         private string lastYtUrl = "";
         private async void txtUrl_TextChanged(object sender, EventArgs e)
