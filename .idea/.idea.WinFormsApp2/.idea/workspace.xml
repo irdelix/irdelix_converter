@@ -6,15 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="97dc7897-b1f7-4129-b08f-7b905213210a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WinFormsApp2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinFormsApp2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Release/net9.0-windows/WinFormsApp2.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Release/net9.0-windows/WinFormsApp2.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Release/net9.0-windows/WinFormsApp2.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Release/net9.0-windows/WinFormsApp2.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Release/net9.0-windows/WinFormsApp2.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Release/net9.0-windows/WinFormsApp2.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Release/net9.0-windows/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Release/net9.0-windows/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Release/net9.0-windows/irdelix_converter.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Release/net9.0-windows/irdelix_converter.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Release/net9.0-windows/irdelix_converter.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Release/net9.0-windows/irdelix_converter.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Release/net9.0-windows/ref/irdelix_converter.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Release/net9.0-windows/ref/irdelix_converter.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Release/net9.0-windows/refint/irdelix_converter.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Release/net9.0-windows/refint/irdelix_converter.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Form1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Form1.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Form1.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,25 +45,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Project.WinFormsApp2.executor&quot;: &quot;Debug&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Publish to folder.Publish WinFormsApp2 to folder.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Project.WinFormsApp2.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Publish to folder.Publish WinFormsApp2 to folder.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "SolutionBuilderGeneralOptionsPage",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Project.WinFormsApp2">
     <configuration name="Publish WinFormsApp2 to folder" type="DotNetFolderPublish" factoryName="Publish to folder">
       <riderPublish configuration="Release" platform="Any CPU" produce_single_file="true" self_contained="true" target_folder="$PROJECT_DIR$/bin/Release/net9.0-windows/win-x64/publish" target_framework="net9.0-windows" uuid_high="3474682829154306969" uuid_low="-4988484329159955464">
@@ -117,6 +111,12 @@
       <workItem from="1774350900725" duration="93000" />
       <workItem from="1775562211927" duration="25000" />
       <workItem from="1776240638759" duration="16000" />
+      <workItem from="1777722873019" duration="2565000" />
+      <workItem from="1777806994543" duration="5157000" />
+      <workItem from="1778231784552" duration="5558000" />
+      <workItem from="1778659304243" duration="5158000" />
+      <workItem from="1778841283264" duration="6227000" />
+      <workItem from="1779527615007" duration="943000" />
     </task>
     <task id="LOCAL-00001" summary="first push">
       <option name="closed" value="true" />

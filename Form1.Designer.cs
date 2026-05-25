@@ -3,18 +3,6 @@
     partial class Form1
     {
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.ListBox lbFiles;
-        private MaterialSkin.Controls.MaterialButton btnRemoveFile;
-        private MaterialSkin.Controls.MaterialButton btnBrowse;
-        private MaterialSkin.Controls.MaterialComboBox cbTargetFormat;
-        private MaterialSkin.Controls.MaterialButton btnConvert;
-        private MaterialSkin.Controls.MaterialLabel lblYtHeader;
-        private MaterialSkin.Controls.MaterialDivider dividerYt;
-        private MaterialSkin.Controls.MaterialTextBox txtUrl;
-        private MaterialSkin.Controls.MaterialComboBox cbYtFormat;
-        private MaterialSkin.Controls.MaterialButton btnDownloadYt;
-        private System.Windows.Forms.ProgressBar progressBar;
-        private MaterialSkin.Controls.MaterialLabel lblStatus;
 
         protected override void Dispose(bool disposing)
         {
@@ -25,247 +13,467 @@
             base.Dispose(disposing);
         }
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            lbFiles = new System.Windows.Forms.ListBox();
-            btnRemoveFile = new MaterialSkin.Controls.MaterialButton();
-            btnBrowse = new MaterialSkin.Controls.MaterialButton();
-            cbTargetFormat = new MaterialSkin.Controls.MaterialComboBox();
-            btnConvert = new MaterialSkin.Controls.MaterialButton();
-            lblYtHeader = new MaterialSkin.Controls.MaterialLabel();
-            dividerYt = new MaterialSkin.Controls.MaterialDivider();
-            txtUrl = new MaterialSkin.Controls.MaterialTextBox();
-            cbYtFormat = new MaterialSkin.Controls.MaterialComboBox();
-            btnDownloadYt = new MaterialSkin.Controls.MaterialButton();
-            progressBar = new System.Windows.Forms.ProgressBar();
-            lblStatus = new MaterialSkin.Controls.MaterialLabel();
-            SuspendLayout();
-            // 
-            // lbFiles
-            // 
-            lbFiles.AllowDrop = true;
-            lbFiles.BackColor = System.Drawing.Color.FromArgb(((int)((byte)50)), ((int)((byte)50)), ((int)((byte)50)));
-            lbFiles.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            lbFiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            lbFiles.ForeColor = System.Drawing.Color.White;
-            lbFiles.FormattingEnabled = true;
-            lbFiles.Location = new System.Drawing.Point(12, 80);
-            lbFiles.Name = "lbFiles";
-            lbFiles.Size = new System.Drawing.Size(890, 112);
-            lbFiles.TabIndex = 9;
-            lbFiles.SelectedIndexChanged += lbFiles_SelectedIndexChanged;
-            lbFiles.DragDrop += lbFiles_DragDrop;
-            lbFiles.DragEnter += lbFiles_DragEnter;
-            // 
-            // btnRemoveFile
-            // 
-            btnRemoveFile.AutoSize = false;
-            btnRemoveFile.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            btnRemoveFile.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnRemoveFile.Depth = 0;
-            btnRemoveFile.HighEmphasis = true;
-            btnRemoveFile.Icon = null;
-            btnRemoveFile.Location = new System.Drawing.Point(928, 80);
-            btnRemoveFile.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            btnRemoveFile.MouseState = MaterialSkin.MouseState.HOVER;
-            btnRemoveFile.Name = "btnRemoveFile";
-            btnRemoveFile.NoAccentTextColor = System.Drawing.Color.Empty;
-            btnRemoveFile.Size = new System.Drawing.Size(75, 36);
-            btnRemoveFile.TabIndex = 8;
-            btnRemoveFile.Text = "SIL (X)";
-            btnRemoveFile.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnRemoveFile.UseAccentColor = false;
-            btnRemoveFile.Click += btnRemoveFile_Click;
-            // 
-            // btnBrowse
-            // 
-            btnBrowse.AutoSize = false;
-            btnBrowse.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            btnBrowse.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnBrowse.Depth = 0;
-            btnBrowse.HighEmphasis = true;
-            btnBrowse.Icon = null;
-            btnBrowse.Location = new System.Drawing.Point(12, 201);
-            btnBrowse.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            btnBrowse.MouseState = MaterialSkin.MouseState.HOVER;
-            btnBrowse.Name = "btnBrowse";
-            btnBrowse.NoAccentTextColor = System.Drawing.Color.Empty;
-            btnBrowse.Size = new System.Drawing.Size(110, 49);
-            btnBrowse.TabIndex = 7;
-            btnBrowse.Text = "DOSYA SEC";
-            btnBrowse.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnBrowse.UseAccentColor = false;
-            btnBrowse.Click += btnBrowse_Click;
-            // 
-            // cbTargetFormat
-            // 
-            cbTargetFormat.AutoResize = false;
-            cbTargetFormat.BackColor = System.Drawing.Color.FromArgb(((int)((byte)255)), ((int)((byte)255)), ((int)((byte)255)));
-            cbTargetFormat.Depth = 0;
-            cbTargetFormat.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            cbTargetFormat.DropDownHeight = 174;
-            cbTargetFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            cbTargetFormat.DropDownWidth = 121;
-            cbTargetFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            cbTargetFormat.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)222)), ((int)((byte)0)), ((int)((byte)0)), ((int)((byte)0)));
-            cbTargetFormat.IntegralHeight = false;
-            cbTargetFormat.ItemHeight = 43;
-            cbTargetFormat.Location = new System.Drawing.Point(695, 201);
-            cbTargetFormat.MaxDropDownItems = 4;
-            cbTargetFormat.MouseState = MaterialSkin.MouseState.OUT;
-            cbTargetFormat.Name = "cbTargetFormat";
-            cbTargetFormat.Size = new System.Drawing.Size(100, 49);
-            cbTargetFormat.StartIndex = 0;
-            cbTargetFormat.TabIndex = 6;
-            // 
-            // btnConvert
-            // 
-            btnConvert.AutoSize = false;
-            btnConvert.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            btnConvert.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnConvert.Depth = 0;
-            btnConvert.HighEmphasis = true;
-            btnConvert.Icon = null;
-            btnConvert.Location = new System.Drawing.Point(802, 202);
-            btnConvert.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            btnConvert.MouseState = MaterialSkin.MouseState.HOVER;
-            btnConvert.Name = "btnConvert";
-            btnConvert.NoAccentTextColor = System.Drawing.Color.Empty;
-            btnConvert.Size = new System.Drawing.Size(100, 49);
-            btnConvert.TabIndex = 5;
-            btnConvert.Text = "CEVIR";
-            btnConvert.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnConvert.UseAccentColor = false;
-            btnConvert.Click += btnConvert_Click;
-            // 
-            // lblYtHeader
-            // 
-            lblYtHeader.AutoSize = true;
-            lblYtHeader.Depth = 0;
-            lblYtHeader.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            lblYtHeader.Location = new System.Drawing.Point(12, 275);
-            lblYtHeader.MouseState = MaterialSkin.MouseState.HOVER;
-            lblYtHeader.Name = "lblYtHeader";
-            lblYtHeader.Size = new System.Drawing.Size(191, 19);
-            lblYtHeader.TabIndex = 10;
-            lblYtHeader.Text = "YouTube ve Spotify İndirici";
-            // 
-            // dividerYt
-            // 
-            dividerYt.BackColor = System.Drawing.Color.FromArgb(((int)((byte)50)), ((int)((byte)50)), ((int)((byte)50)));
-            dividerYt.Depth = 0;
-            dividerYt.Location = new System.Drawing.Point(210, 285);
-            dividerYt.MouseState = MaterialSkin.MouseState.HOVER;
-            dividerYt.Name = "dividerYt";
-            dividerYt.Size = new System.Drawing.Size(793, 2);
-            dividerYt.TabIndex = 11;
-            // 
-            // txtUrl
-            // 
-            txtUrl.AnimateReadOnly = false;
-            txtUrl.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            txtUrl.Depth = 0;
-            txtUrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            txtUrl.Hint = "YouTube veya Spotify Linki";
-            txtUrl.LeadingIcon = null;
-            txtUrl.Location = new System.Drawing.Point(12, 310);
-            txtUrl.MaxLength = 500;
-            txtUrl.MouseState = MaterialSkin.MouseState.OUT;
-            txtUrl.Multiline = false;
-            txtUrl.Name = "txtUrl";
-            txtUrl.Size = new System.Drawing.Size(890, 50);
-            txtUrl.TabIndex = 4;
-            txtUrl.Text = "";
-            txtUrl.TrailingIcon = null;
-            // 
-            // cbYtFormat
-            // 
-            cbYtFormat.AutoResize = false;
-            cbYtFormat.BackColor = System.Drawing.Color.FromArgb(((int)((byte)255)), ((int)((byte)255)), ((int)((byte)255)));
-            cbYtFormat.Depth = 0;
-            cbYtFormat.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            cbYtFormat.DropDownHeight = 174;
-            cbYtFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            cbYtFormat.DropDownWidth = 121;
-            cbYtFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            cbYtFormat.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)222)), ((int)((byte)0)), ((int)((byte)0)), ((int)((byte)0)));
-            cbYtFormat.IntegralHeight = false;
-            cbYtFormat.ItemHeight = 43;
-            cbYtFormat.Items.AddRange(new object[] { "MP3", "MP4" });
-            cbYtFormat.Location = new System.Drawing.Point(913, 309);
-            cbYtFormat.MaxDropDownItems = 4;
-            cbYtFormat.MouseState = MaterialSkin.MouseState.OUT;
-            cbYtFormat.Name = "cbYtFormat";
-            cbYtFormat.Size = new System.Drawing.Size(90, 49);
-            cbYtFormat.StartIndex = 0;
-            cbYtFormat.TabIndex = 3;
-            // 
-            // btnDownloadYt
-            // 
-            btnDownloadYt.AutoSize = false;
-            btnDownloadYt.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            btnDownloadYt.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnDownloadYt.Depth = 0;
-            btnDownloadYt.HighEmphasis = true;
-            btnDownloadYt.Icon = null;
-            btnDownloadYt.Location = new System.Drawing.Point(878, 394);
-            btnDownloadYt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            btnDownloadYt.MouseState = MaterialSkin.MouseState.HOVER;
-            btnDownloadYt.Name = "btnDownloadYt";
-            btnDownloadYt.NoAccentTextColor = System.Drawing.Color.Empty;
-            btnDownloadYt.Size = new System.Drawing.Size(125, 36);
-            btnDownloadYt.TabIndex = 2;
-            btnDownloadYt.Text = "INDIR";
-            btnDownloadYt.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnDownloadYt.UseAccentColor = false;
-            btnDownloadYt.Click += btnDownloadYt_Click;
-            // 
-            // progressBar
-            // 
-            progressBar.Location = new System.Drawing.Point(12, 375);
-            progressBar.Name = "progressBar";
-            progressBar.Size = new System.Drawing.Size(991, 12);
-            progressBar.TabIndex = 1;
-            // 
-            // lblStatus
-            // 
-            lblStatus.AutoSize = true;
-            lblStatus.Depth = 0;
-            lblStatus.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            lblStatus.Location = new System.Drawing.Point(12, 400);
-            lblStatus.MouseState = MaterialSkin.MouseState.HOVER;
-            lblStatus.Name = "lblStatus";
-            lblStatus.Size = new System.Drawing.Size(113, 19);
-            lblStatus.TabIndex = 0;
-            lblStatus.Text = "Durum: Bekliyor";
-            // 
-            // Form1
-            // 
-            ClientSize = new System.Drawing.Size(1021, 450);
-            Controls.Add(lblStatus);
-            Controls.Add(progressBar);
-            Controls.Add(btnDownloadYt);
-            Controls.Add(cbYtFormat);
-            Controls.Add(txtUrl);
-            Controls.Add(dividerYt);
-            Controls.Add(lblYtHeader);
-            Controls.Add(btnConvert);
-            Controls.Add(cbTargetFormat);
-            Controls.Add(btnBrowse);
-            Controls.Add(btnRemoveFile);
-            Controls.Add(lbFiles);
-            Icon = ((System.Drawing.Icon)resources.GetObject("$this.Icon"));
-            MaximizeBox = false;
-            Sizable = false;
-            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "irdelix Converter";
-            ResumeLayout(false);
-            PerformLayout();
+            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
+            this.tabConverter = new System.Windows.Forms.TabPage();
+            this.cbQuality = new MaterialSkin.Controls.MaterialComboBox();
+            this.cbResolution = new MaterialSkin.Controls.MaterialComboBox();
+            this.lbFiles = new System.Windows.Forms.ListBox();
+            this.btnBrowse = new MaterialSkin.Controls.MaterialButton();
+            this.btnRemoveFile = new MaterialSkin.Controls.MaterialButton();
+            this.cbTargetFormat = new MaterialSkin.Controls.MaterialComboBox();
+            this.btnConvert = new MaterialSkin.Controls.MaterialButton();
+            this.lblStatus = new MaterialSkin.Controls.MaterialLabel();
+            this.progressBar = new MaterialSkin.Controls.MaterialProgressBar();
+            this.tabYoutube = new System.Windows.Forms.TabPage();
+            this.txtUrl = new MaterialSkin.Controls.MaterialTextBox();
+            this.cbYtResolution = new MaterialSkin.Controls.MaterialComboBox();
+            this.cbYtFormat = new MaterialSkin.Controls.MaterialComboBox();
+            this.btnDownloadYt = new MaterialSkin.Controls.MaterialButton();
+            this.lblYtStatus = new MaterialSkin.Controls.MaterialLabel();
+            this.progressBarYt = new MaterialSkin.Controls.MaterialProgressBar();
+            this.tabSocial = new System.Windows.Forms.TabPage();
+            this.txtSocialUrl = new MaterialSkin.Controls.MaterialTextBox();
+            this.cbSocialResolution = new MaterialSkin.Controls.MaterialComboBox();
+            this.btnDownloadSocial = new MaterialSkin.Controls.MaterialButton();
+            this.lblSocialStatus = new MaterialSkin.Controls.MaterialLabel();
+            this.progressBarSocial = new MaterialSkin.Controls.MaterialProgressBar();
+            this.materialTabControl1.SuspendLayout();
+            this.tabConverter.SuspendLayout();
+            this.tabYoutube.SuspendLayout();
+            this.tabSocial.SuspendLayout();
+            this.SuspendLayout();
+
+            this.materialTabSelector1.BaseTabControl = this.materialTabControl1;
+            this.materialTabSelector1.Depth = 0;
+            this.materialTabSelector1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTabSelector1.Location = new System.Drawing.Point(0, 64);
+            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabSelector1.Name = "materialTabSelector1";
+            this.materialTabSelector1.Size = new System.Drawing.Size(800, 48);
+            this.materialTabSelector1.TabIndex = 0;
+
+            this.materialTabControl1.Controls.Add(this.tabConverter);
+            this.materialTabControl1.Controls.Add(this.tabYoutube);
+            this.materialTabControl1.Controls.Add(this.tabSocial);
+            this.materialTabControl1.Depth = 0;
+            this.materialTabControl1.Location = new System.Drawing.Point(6, 118);
+            this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabControl1.Multiline = true;
+            this.materialTabControl1.Name = "materialTabControl1";
+            this.materialTabControl1.SelectedIndex = 0;
+            this.materialTabControl1.Size = new System.Drawing.Size(788, 326);
+            this.materialTabControl1.TabIndex = 1;
+
+            this.tabConverter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.tabConverter.Controls.Add(this.cbQuality);
+            this.tabConverter.Controls.Add(this.cbResolution);
+            this.tabConverter.Controls.Add(this.lbFiles);
+            this.tabConverter.Controls.Add(this.btnBrowse);
+            this.tabConverter.Controls.Add(this.btnRemoveFile);
+            this.tabConverter.Controls.Add(this.cbTargetFormat);
+            this.tabConverter.Controls.Add(this.btnConvert);
+            this.tabConverter.Controls.Add(this.lblStatus);
+            this.tabConverter.Controls.Add(this.progressBar);
+            this.tabConverter.Location = new System.Drawing.Point(4, 24);
+            this.tabConverter.Name = "tabConverter";
+            this.tabConverter.Padding = new System.Windows.Forms.Padding(3);
+            this.tabConverter.Size = new System.Drawing.Size(780, 298);
+            this.tabConverter.TabIndex = 0;
+            this.tabConverter.Text = "Donusturucu";
+
+            this.cbQuality.AutoResize = false;
+            this.cbQuality.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbQuality.Depth = 0;
+            this.cbQuality.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbQuality.DropDownHeight = 174;
+            this.cbQuality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbQuality.DropDownWidth = 121;
+            this.cbQuality.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbQuality.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbQuality.FormattingEnabled = true;
+            this.cbQuality.Hint = "Resim Kalitesi";
+            this.cbQuality.IntegralHeight = false;
+            this.cbQuality.ItemHeight = 43;
+            this.cbQuality.Items.AddRange(new object[] { "100", "80", "60", "30" });
+            this.cbQuality.Location = new System.Drawing.Point(500, 160);
+            this.cbQuality.MaxDropDownItems = 4;
+            this.cbQuality.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbQuality.Name = "cbQuality";
+            this.cbQuality.Size = new System.Drawing.Size(130, 49);
+            this.cbQuality.StartIndex = 0;
+            this.cbQuality.TabIndex = 8;
+
+            this.cbResolution.AutoResize = false;
+            this.cbResolution.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbResolution.Depth = 0;
+            this.cbResolution.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbResolution.DropDownHeight = 174;
+            this.cbResolution.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbResolution.DropDownWidth = 121;
+            this.cbResolution.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbResolution.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbResolution.FormattingEnabled = true;
+            this.cbResolution.Hint = "Cozunurluk";
+            this.cbResolution.IntegralHeight = false;
+            this.cbResolution.ItemHeight = 43;
+            this.cbResolution.Items.AddRange(new object[] { "1080p", "720p", "480p" });
+            this.cbResolution.Location = new System.Drawing.Point(360, 160);
+            this.cbResolution.MaxDropDownItems = 4;
+            this.cbResolution.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbResolution.Name = "cbResolution";
+            this.cbResolution.Size = new System.Drawing.Size(130, 49);
+            this.cbResolution.StartIndex = 0;
+            this.cbResolution.TabIndex = 7;
+
+            this.lbFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.lbFiles.ForeColor = System.Drawing.Color.White;
+            this.lbFiles.FormattingEnabled = true;
+            this.lbFiles.ItemHeight = 15;
+            this.lbFiles.Location = new System.Drawing.Point(20, 20);
+            this.lbFiles.Name = "lbFiles";
+            this.lbFiles.Size = new System.Drawing.Size(740, 124);
+            this.lbFiles.TabIndex = 0;
+            this.lbFiles.DragDrop += new System.Windows.Forms.DragEventHandler(this.lbFiles_DragDrop);
+            this.lbFiles.DragEnter += new System.Windows.Forms.DragEventHandler(this.lbFiles_DragEnter);
+            this.lbFiles.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lbFiles_KeyDown);
+
+            this.btnBrowse.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnBrowse.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnBrowse.Depth = 0;
+            this.btnBrowse.HighEmphasis = true;
+            this.btnBrowse.Icon = null;
+            this.btnBrowse.Location = new System.Drawing.Point(20, 160);
+            this.btnBrowse.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnBrowse.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnBrowse.Size = new System.Drawing.Size(100, 36);
+            this.btnBrowse.TabIndex = 1;
+            this.btnBrowse.Text = "Dosya Sec";
+            this.btnBrowse.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnBrowse.UseAccentColor = false;
+            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
+
+            this.btnRemoveFile.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnRemoveFile.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnRemoveFile.Depth = 0;
+            this.btnRemoveFile.HighEmphasis = true;
+            this.btnRemoveFile.Icon = null;
+            this.btnRemoveFile.Location = new System.Drawing.Point(130, 160);
+            this.btnRemoveFile.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnRemoveFile.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnRemoveFile.Name = "btnRemoveFile";
+            this.btnRemoveFile.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnRemoveFile.Size = new System.Drawing.Size(64, 36);
+            this.btnRemoveFile.TabIndex = 2;
+            this.btnRemoveFile.Text = "Sil";
+            this.btnRemoveFile.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnRemoveFile.UseAccentColor = true;
+            this.btnRemoveFile.UseVisualStyleBackColor = true;
+            this.btnRemoveFile.Click += new System.EventHandler(this.btnRemoveFile_Click);
+
+            this.cbTargetFormat.AutoResize = false;
+            this.cbTargetFormat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbTargetFormat.Depth = 0;
+            this.cbTargetFormat.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbTargetFormat.DropDownHeight = 174;
+            this.cbTargetFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTargetFormat.DropDownWidth = 121;
+            this.cbTargetFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbTargetFormat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbTargetFormat.FormattingEnabled = true;
+            this.cbTargetFormat.Hint = "Format";
+            this.cbTargetFormat.IntegralHeight = false;
+            this.cbTargetFormat.ItemHeight = 43;
+            this.cbTargetFormat.Location = new System.Drawing.Point(640, 160);
+            this.cbTargetFormat.MaxDropDownItems = 4;
+            this.cbTargetFormat.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbTargetFormat.Name = "cbTargetFormat";
+            this.cbTargetFormat.Size = new System.Drawing.Size(120, 49);
+            this.cbTargetFormat.StartIndex = 0;
+            this.cbTargetFormat.TabIndex = 3;
+
+            this.btnConvert.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnConvert.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnConvert.Depth = 0;
+            this.btnConvert.HighEmphasis = true;
+            this.btnConvert.Icon = null;
+            this.btnConvert.Location = new System.Drawing.Point(690, 220);
+            this.btnConvert.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnConvert.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnConvert.Name = "btnConvert";
+            this.btnConvert.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnConvert.Size = new System.Drawing.Size(70, 36);
+            this.btnConvert.TabIndex = 4;
+            this.btnConvert.Text = "Cevir";
+            this.btnConvert.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnConvert.UseAccentColor = false;
+            this.btnConvert.UseVisualStyleBackColor = true;
+            this.btnConvert.Click += new System.EventHandler(this.btnConvert_Click);
+
+            this.lblStatus.AutoSize = false;
+            this.lblStatus.Depth = 0;
+            this.lblStatus.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblStatus.Location = new System.Drawing.Point(20, 230);
+            this.lblStatus.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(650, 20);
+            this.lblStatus.TabIndex = 5;
+            this.lblStatus.Text = "Durum: Bekleniyor";
+
+            this.progressBar.Depth = 0;
+            this.progressBar.Location = new System.Drawing.Point(20, 260);
+            this.progressBar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(740, 5);
+            this.progressBar.TabIndex = 6;
+
+            this.tabYoutube.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.tabYoutube.Controls.Add(this.txtUrl);
+            this.tabYoutube.Controls.Add(this.cbYtResolution);
+            this.tabYoutube.Controls.Add(this.cbYtFormat);
+            this.tabYoutube.Controls.Add(this.btnDownloadYt);
+            this.tabYoutube.Controls.Add(this.lblYtStatus);
+            this.tabYoutube.Controls.Add(this.progressBarYt);
+            this.tabYoutube.Location = new System.Drawing.Point(4, 24);
+            this.tabYoutube.Name = "tabYoutube";
+            this.tabYoutube.Padding = new System.Windows.Forms.Padding(3);
+            this.tabYoutube.Size = new System.Drawing.Size(780, 298);
+            this.tabYoutube.TabIndex = 1;
+            this.tabYoutube.Text = "YouTube/Spotify";
+
+            this.txtUrl.AnimateReadOnly = false;
+            this.txtUrl.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUrl.Depth = 0;
+            this.txtUrl.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtUrl.Hint = "YouTube veya Spotify Linki";
+            this.txtUrl.LeadingIcon = null;
+            this.txtUrl.Location = new System.Drawing.Point(20, 40);
+            this.txtUrl.MaxLength = 500;
+            this.txtUrl.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtUrl.Multiline = false;
+            this.txtUrl.Name = "txtUrl";
+            this.txtUrl.Size = new System.Drawing.Size(480, 50);
+            this.txtUrl.TabIndex = 0;
+            this.txtUrl.Text = "";
+            this.txtUrl.TrailingIcon = null;
+            this.txtUrl.TextChanged += new System.EventHandler(this.txtUrl_TextChanged);
+
+            this.cbYtResolution.AutoResize = false;
+            this.cbYtResolution.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbYtResolution.Depth = 0;
+            this.cbYtResolution.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbYtResolution.DropDownHeight = 174;
+            this.cbYtResolution.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbYtResolution.DropDownWidth = 121;
+            this.cbYtResolution.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbYtResolution.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbYtResolution.FormattingEnabled = true;
+            this.cbYtResolution.Hint = "Cozunurluk";
+            this.cbYtResolution.IntegralHeight = false;
+            this.cbYtResolution.ItemHeight = 43;
+            this.cbYtResolution.Items.AddRange(new object[] { "En Yuksek", "1080p", "720p", "480p", "360p" });
+            this.cbYtResolution.Location = new System.Drawing.Point(520, 41);
+            this.cbYtResolution.MaxDropDownItems = 4;
+            this.cbYtResolution.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbYtResolution.Name = "cbYtResolution";
+            this.cbYtResolution.Size = new System.Drawing.Size(120, 49);
+            this.cbYtResolution.StartIndex = 0;
+            this.cbYtResolution.TabIndex = 3;
+
+            this.cbYtFormat.AutoResize = false;
+            this.cbYtFormat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbYtFormat.Depth = 0;
+            this.cbYtFormat.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbYtFormat.DropDownHeight = 174;
+            this.cbYtFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbYtFormat.DropDownWidth = 121;
+            this.cbYtFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbYtFormat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbYtFormat.FormattingEnabled = true;
+            this.cbYtFormat.Hint = "Format";
+            this.cbYtFormat.IntegralHeight = false;
+            this.cbYtFormat.ItemHeight = 43;
+            this.cbYtFormat.Items.AddRange(new object[] { "MP3", "MP4", "WAV" });
+            this.cbYtFormat.Location = new System.Drawing.Point(650, 41);
+            this.cbYtFormat.MaxDropDownItems = 4;
+            this.cbYtFormat.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbYtFormat.Name = "cbYtFormat";
+            this.cbYtFormat.Size = new System.Drawing.Size(110, 49);
+            this.cbYtFormat.StartIndex = 0;
+            this.cbYtFormat.TabIndex = 1;
+
+            this.btnDownloadYt.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnDownloadYt.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnDownloadYt.Depth = 0;
+            this.btnDownloadYt.HighEmphasis = true;
+            this.btnDownloadYt.Icon = null;
+            this.btnDownloadYt.Location = new System.Drawing.Point(690, 110);
+            this.btnDownloadYt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnDownloadYt.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnDownloadYt.Name = "btnDownloadYt";
+            this.btnDownloadYt.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnDownloadYt.Size = new System.Drawing.Size(64, 36);
+            this.btnDownloadYt.TabIndex = 2;
+            this.btnDownloadYt.Text = "Indir";
+            this.btnDownloadYt.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnDownloadYt.UseAccentColor = false;
+            this.btnDownloadYt.UseVisualStyleBackColor = true;
+            this.btnDownloadYt.Click += new System.EventHandler(this.btnDownloadYt_Click);
+
+            this.lblYtStatus.AutoSize = false;
+            this.lblYtStatus.Depth = 0;
+            this.lblYtStatus.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblYtStatus.Location = new System.Drawing.Point(20, 180);
+            this.lblYtStatus.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblYtStatus.Name = "lblYtStatus";
+            this.lblYtStatus.Size = new System.Drawing.Size(740, 20);
+            this.lblYtStatus.TabIndex = 5;
+            this.lblYtStatus.Text = "Durum: Bekleniyor";
+
+            this.progressBarYt.Depth = 0;
+            this.progressBarYt.Location = new System.Drawing.Point(20, 210);
+            this.progressBarYt.MouseState = MaterialSkin.MouseState.HOVER;
+            this.progressBarYt.Name = "progressBarYt";
+            this.progressBarYt.Size = new System.Drawing.Size(740, 5);
+            this.progressBarYt.TabIndex = 6;
+
+            this.tabSocial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.tabSocial.Controls.Add(this.txtSocialUrl);
+            this.tabSocial.Controls.Add(this.cbSocialResolution);
+            this.tabSocial.Controls.Add(this.btnDownloadSocial);
+            this.tabSocial.Controls.Add(this.lblSocialStatus);
+            this.tabSocial.Controls.Add(this.progressBarSocial);
+            this.tabSocial.Location = new System.Drawing.Point(4, 24);
+            this.tabSocial.Name = "tabSocial";
+            this.tabSocial.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSocial.Size = new System.Drawing.Size(780, 298);
+            this.tabSocial.TabIndex = 2;
+            this.tabSocial.Text = "Sosyal Medya";
+
+            this.txtSocialUrl.AnimateReadOnly = false;
+            this.txtSocialUrl.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSocialUrl.Depth = 0;
+            this.txtSocialUrl.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtSocialUrl.Hint = "Instagram, TikTok, Twitter vb. Linki";
+            this.txtSocialUrl.LeadingIcon = null;
+            this.txtSocialUrl.Location = new System.Drawing.Point(20, 40);
+            this.txtSocialUrl.MaxLength = 500;
+            this.txtSocialUrl.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtSocialUrl.Multiline = false;
+            this.txtSocialUrl.Name = "txtSocialUrl";
+            this.txtSocialUrl.Size = new System.Drawing.Size(560, 50);
+            this.txtSocialUrl.TabIndex = 0;
+            this.txtSocialUrl.Text = "";
+            this.txtSocialUrl.TrailingIcon = null;
+            this.txtSocialUrl.TextChanged += new System.EventHandler(this.txtSocialUrl_TextChanged);
+
+            this.cbSocialResolution.AutoResize = false;
+            this.cbSocialResolution.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbSocialResolution.Depth = 0;
+            this.cbSocialResolution.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbSocialResolution.DropDownHeight = 174;
+            this.cbSocialResolution.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSocialResolution.DropDownWidth = 121;
+            this.cbSocialResolution.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbSocialResolution.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbSocialResolution.FormattingEnabled = true;
+            this.cbSocialResolution.Hint = "Cozunurluk";
+            this.cbSocialResolution.IntegralHeight = false;
+            this.cbSocialResolution.ItemHeight = 43;
+            this.cbSocialResolution.Items.AddRange(new object[] { "En Yuksek", "1080p", "720p", "480p" });
+            this.cbSocialResolution.Location = new System.Drawing.Point(600, 41);
+            this.cbSocialResolution.MaxDropDownItems = 4;
+            this.cbSocialResolution.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbSocialResolution.Name = "cbSocialResolution";
+            this.cbSocialResolution.Size = new System.Drawing.Size(160, 49);
+            this.cbSocialResolution.StartIndex = 0;
+            this.cbSocialResolution.TabIndex = 4;
+
+            this.btnDownloadSocial.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnDownloadSocial.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnDownloadSocial.Depth = 0;
+            this.btnDownloadSocial.HighEmphasis = true;
+            this.btnDownloadSocial.Icon = null;
+            this.btnDownloadSocial.Location = new System.Drawing.Point(690, 110);
+            this.btnDownloadSocial.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnDownloadSocial.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnDownloadSocial.Name = "btnDownloadSocial";
+            this.btnDownloadSocial.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnDownloadSocial.Size = new System.Drawing.Size(64, 36);
+            this.btnDownloadSocial.TabIndex = 1;
+            this.btnDownloadSocial.Text = "Indir";
+            this.btnDownloadSocial.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnDownloadSocial.UseAccentColor = false;
+            this.btnDownloadSocial.UseVisualStyleBackColor = true;
+            this.btnDownloadSocial.Click += new System.EventHandler(this.btnDownloadSocial_Click);
+
+            this.lblSocialStatus.AutoSize = false;
+            this.lblSocialStatus.Depth = 0;
+            this.lblSocialStatus.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblSocialStatus.Location = new System.Drawing.Point(20, 180);
+            this.lblSocialStatus.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblSocialStatus.Name = "lblSocialStatus";
+            this.lblSocialStatus.Size = new System.Drawing.Size(740, 20);
+            this.lblSocialStatus.TabIndex = 2;
+            this.lblSocialStatus.Text = "Durum: Bekleniyor";
+
+            this.progressBarSocial.Depth = 0;
+            this.progressBarSocial.Location = new System.Drawing.Point(20, 210);
+            this.progressBarSocial.MouseState = MaterialSkin.MouseState.HOVER;
+            this.progressBarSocial.Name = "progressBarSocial";
+            this.progressBarSocial.Size = new System.Drawing.Size(740, 5);
+            this.progressBarSocial.TabIndex = 3;
+
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.materialTabControl1);
+            this.Controls.Add(this.materialTabSelector1);
+            this.Name = "Form1";
+            this.Text = "Irdelix Converter";
+            this.materialTabControl1.ResumeLayout(false);
+            this.tabConverter.ResumeLayout(false);
+            this.tabConverter.PerformLayout();
+            this.tabYoutube.ResumeLayout(false);
+            this.tabYoutube.PerformLayout();
+            this.tabSocial.ResumeLayout(false);
+            this.tabSocial.PerformLayout();
+            this.ResumeLayout(false);
+
         }
+
+        private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
+        private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
+        private System.Windows.Forms.TabPage tabConverter;
+        private System.Windows.Forms.TabPage tabYoutube;
+        private System.Windows.Forms.TabPage tabSocial;
+
+        private System.Windows.Forms.ListBox lbFiles;
+        private MaterialSkin.Controls.MaterialButton btnBrowse;
+        private MaterialSkin.Controls.MaterialButton btnRemoveFile;
+        private MaterialSkin.Controls.MaterialComboBox cbTargetFormat;
+        private MaterialSkin.Controls.MaterialComboBox cbResolution;
+        private MaterialSkin.Controls.MaterialComboBox cbQuality;
+        private MaterialSkin.Controls.MaterialButton btnConvert;
+        private MaterialSkin.Controls.MaterialLabel lblStatus;
+        private MaterialSkin.Controls.MaterialProgressBar progressBar;
+
+        private MaterialSkin.Controls.MaterialTextBox txtUrl;
+        private MaterialSkin.Controls.MaterialComboBox cbYtFormat;
+        private MaterialSkin.Controls.MaterialComboBox cbYtResolution;
+        private MaterialSkin.Controls.MaterialButton btnDownloadYt;
+        private MaterialSkin.Controls.MaterialLabel lblYtStatus;
+        private MaterialSkin.Controls.MaterialProgressBar progressBarYt;
+
+        private MaterialSkin.Controls.MaterialTextBox txtSocialUrl;
+        private MaterialSkin.Controls.MaterialComboBox cbSocialResolution;
+        private MaterialSkin.Controls.MaterialButton btnDownloadSocial;
+        private MaterialSkin.Controls.MaterialLabel lblSocialStatus;
+        private MaterialSkin.Controls.MaterialProgressBar progressBarSocial;
     }
 }
