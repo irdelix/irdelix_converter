@@ -33,7 +33,7 @@ namespace ConverterApp
         public Form1()
         {
             InitializeComponent();
-            
+
             lbFiles.AllowDrop = true;
             cbYtFormat.SelectedIndex = 1;
             cbYtFormat.SelectedIndex = 1;
@@ -41,7 +41,7 @@ namespace ConverterApp
 
             btnDownloadYt.Enabled = false;
             btnDownloadSocial.Enabled = false;
-            
+
             cbYtResolution.Items.Clear();
             cbYtResolution.Items.Add(new ComboBoxItem { Text = "En Yuksek", Value = 0 });
             cbYtResolution.Items.Add(new ComboBoxItem { Text = "1080p", Value = 1080 });
@@ -58,7 +58,7 @@ namespace ConverterApp
 
             btnDownloadYt.Enabled = false;
             btnDownloadSocial.Enabled = false;
-            
+
             lbFiles.SelectionMode = SelectionMode.MultiExtended;
             lbFiles.KeyDown += lbFiles_KeyDown;
 
@@ -77,7 +77,7 @@ namespace ConverterApp
             cbTargetFormat.SelectedIndexChanged += (s, ev) =>
             {
                 if (cbTargetFormat.SelectedItem == null) return;
-                
+
                 string format = cbTargetFormat.SelectedItem?.ToString()?.ToLower() ?? "";
 
                 if (format == "mp4")
@@ -225,7 +225,7 @@ namespace ConverterApp
             {
                 e.Effect = DragDropEffects.None;
             }
-            
+
         }
 
         private void lbFiles_DragDrop(object? sender, DragEventArgs e)
@@ -274,7 +274,7 @@ namespace ConverterApp
             cbYtResolution.SelectedIndex = 0;
 
             cbResolution.Items.Clear();
-            cbResolution.Items.Add(new ComboBoxItem { Text = "Orjinal", Value = 0 });
+            cbResolution.Items.Add(new ComboBoxItem { Text = "Orijinal", Value = 0 });
             cbResolution.Items.Add(new ComboBoxItem { Text = "1080p", Value = 1080 });
             cbResolution.Items.Add(new ComboBoxItem { Text = "720p", Value = 720 });
             cbResolution.Items.Add(new ComboBoxItem { Text = "480p", Value = 480 });
@@ -318,7 +318,7 @@ namespace ConverterApp
                                 if (res.Value == 1080) settings.VideoFrameSize = "1920x1080";
                                 else if (res.Value == 720) settings.VideoFrameSize = "1280x720";
                             }
-                            
+
                             convert.ConvertMedia(file, null, targetFile, targetExt, settings);
                         });
                     }
@@ -335,7 +335,7 @@ namespace ConverterApp
                                     if (res.Value > 0)
                                     {
                                         // Orantılı boyutlandırma (Genişliği yükseklik bazlı ayarlar)
-                                        image.Resize(0, (uint)res.Value); 
+                                        image.Resize(0, (uint)res.Value);
                                     }
                                 }
 
@@ -359,7 +359,7 @@ namespace ConverterApp
                 btnConvert.Enabled = true;
             }
         }
-        
+
 
         private string Temizle(string name)
         {
@@ -411,20 +411,20 @@ namespace ConverterApp
         {
             string currentUrl = txtUrl.Text;
             btnDownloadYt.Enabled = false;
-            
+
             if (string.IsNullOrWhiteSpace(currentUrl) || !currentUrl.StartsWith("http")) return;
 
             if (currentUrl.Contains("spotify") || currentUrl.Contains("playlist") || currentUrl.Contains("list=") || currentUrl.Contains("album"))
             {
                 btnDownloadYt.Enabled = true;
-                return; 
+                return;
             }
 
             if (currentUrl == lastYtUrl) return;
             lastYtUrl = currentUrl;
-            
+
             await Task.Delay(800);
-            
+
             if (txtUrl.Text != currentUrl) return;
 
             await FetchYoutubeResolutionsAsync(currentUrl);
@@ -495,7 +495,7 @@ namespace ConverterApp
             var youtube = new YoutubeClient();
             string url = txtUrl.Text;
             string format = cbYtFormat.SelectedItem?.ToString() ?? "MP4";
-            
+
             var resItem = cbYtResolution.SelectedItem as ComboBoxItem ?? new ComboBoxItem { Text = "En Yüksek", Value = 0 };
 
             try
@@ -518,7 +518,7 @@ namespace ConverterApp
                 lblYtStatus.Text = "Hata: " + ex.Message;
                 progressBarYt.Value = 0;
             }
-            
+
             btnDownloadYt.Enabled = true;
         }
 
@@ -526,23 +526,23 @@ namespace ConverterApp
         {
             List<string> searchQueries = new List<string>();
             var match = Regex.Match(playlistUrl, @"(playlist|album)/([a-zA-Z0-9]+)");
-            
+
             if (!match.Success) throw new Exception("Gecersiz Spotify linki.");
-            
+
             string type = match.Groups[1].Value;
             string id = match.Groups[2].Value;
 
             using (var client = new HttpClient())
             {
                 client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36");
-                
+
                 string embedUrl = $"https://open.spotify.com/embed/{type}/{id}";
                 var htmlResponse = await client.GetAsync(embedUrl);
-                
+
                 if (!htmlResponse.IsSuccessStatusCode) throw new Exception("Embed sayfasi alinamadi.");
 
                 string html = await htmlResponse.Content.ReadAsStringAsync();
-                
+
                 var dataMatch = Regex.Match(html, @"<script id=""__NEXT_DATA__"" type=""application/json"">(.*?)</script>");
                 if (!dataMatch.Success) throw new Exception("Liste verisi HTML icinde bulunamadi.");
 
@@ -558,7 +558,7 @@ namespace ConverterApp
 
                     string entityName = entity.GetProperty("name").GetString() ?? "Spotify Playlist";
                     string entitySubtitle = (entity.TryGetProperty("subtitle", out var sub) ? sub.GetString() : "") ?? "";
-                    
+
                     string playlistFullName = string.IsNullOrWhiteSpace(entitySubtitle) ? entityName : $"{entitySubtitle} - {entityName}";
 
                     var trackList = entity.GetProperty("trackList");
@@ -583,9 +583,9 @@ namespace ConverterApp
         {
             var playlistData = await GetSpotifyPlaylistTracksAsync(playlistUrl);
             List<string> trackQueries = playlistData.TrackQueries;
-            
+
             FolderBrowserDialog fbd = new FolderBrowserDialog();
-            
+
             if (fbd.ShowDialog() == DialogResult.OK)
             {
                 string safePlaylistName = Temizle(playlistData.PlaylistName);
@@ -603,7 +603,7 @@ namespace ConverterApp
                 {
                     current++;
                     lblYtStatus.Text = $"YouTube'da araniyor ({current}/{total}): {query}";
-                    
+
                     var searchResults = youtube.Search.GetVideosAsync(query);
                     await foreach (var result in searchResults)
                     {
@@ -657,16 +657,16 @@ namespace ConverterApp
                                     if (timeSpan.TotalSeconds >= 0.5)
                                     {
                                         long bytesPerSec = Math.Max(0, (long)((currentBytes - lastBytes) / timeSpan.TotalSeconds));
-                                        
-                                         if (val >= 99)
-                                         {
-                                             lblYtStatus.Text = $"[{current}/{total}] İşleniyor/Birleştiriliyor. Lütfen bekleyin...";
-                                         }
+
+                                        if (val >= 99)
+                                        {
+                                            lblYtStatus.Text = $"[{current}/{total}] İşleniyor/Birleştiriliyor. Lütfen bekleyin...";
+                                        }
                                         else
                                         {
                                             lblYtStatus.Text = $"[{current}/{total}] Indiriliyor: %{val} | Hiz: {FormatBytes(bytesPerSec)}/s";
                                         }
-                                        
+
                                         lastUpdate = now;
                                         lastBytes = currentBytes;
                                     }
@@ -684,7 +684,7 @@ namespace ConverterApp
 
                             await youtube.Videos.DownloadAsync(streamInfos, conversionReq.Build(), progress);
                         }
-                        break; 
+                        break;
                     }
                 }
 
@@ -713,7 +713,7 @@ namespace ConverterApp
         {
             var playlist = await youtube.Playlists.GetAsync(playlistUrl);
             string safePlaylistName = Temizle(playlist.Title);
-            
+
             FolderBrowserDialog fbd = new FolderBrowserDialog();
 
             if (fbd.ShowDialog() == DialogResult.OK)
@@ -735,7 +735,7 @@ namespace ConverterApp
                 {
                     currentVideo++;
                     lblYtStatus.Text = $"Indiriliyor ({currentVideo}/{totalVideos}): {video.Title}";
-                    
+
                     string safeTitle = Temizle(video.Title);
                     string targetFilePath = Path.Combine(tempDirPath, safeTitle + "." + format.ToLower());
 
@@ -786,16 +786,16 @@ namespace ConverterApp
                                 if (timeSpan.TotalSeconds >= 0.5)
                                 {
                                     long bytesPerSec = Math.Max(0, (long)((currentBytes - lastBytes) / timeSpan.TotalSeconds));
-                                    
-                                     if (val >= 99)
-                                     {
-                                         lblYtStatus.Text = $"[{currentVideo}/{totalVideos}] İşleniyor/Birleştiriliyor. Lütfen bekleyin...";
-                                     }
+
+                                    if (val >= 99)
+                                    {
+                                        lblYtStatus.Text = $"[{currentVideo}/{totalVideos}] İşleniyor/Birleştiriliyor. Lütfen bekleyin...";
+                                    }
                                     else
                                     {
                                         lblYtStatus.Text = $"[{currentVideo}/{totalVideos}] Indiriliyor: %{val} | Hiz: {FormatBytes(bytesPerSec)}/s";
                                     }
-                                    
+
                                     lastUpdate = now;
                                     lastBytes = currentBytes;
                                 }
@@ -845,22 +845,22 @@ namespace ConverterApp
                 {
                     client.DefaultRequestHeaders.Add("User-Agent", "IrdelixConverter/1.0");
                     string oembedUrl = "https://open.spotify.com/oembed?url=" + videoUrl;
-                    
+
                     string json = await client.GetStringAsync(oembedUrl);
-                    
+
                     using (var doc = JsonDocument.Parse(json))
                     {
                         string title = (doc.RootElement.TryGetProperty("title", out var t) ? t.GetString() : "") ?? "";
                         string author = (doc.RootElement.TryGetProperty("author_name", out var a) ? a.GetString() : "") ?? "";
                         string searchQuery = $"{author} - {title}";
-                        
+
                         lblYtStatus.Text = "YouTube'da bulunuyor...";
-                        
+
                         var searchResults = youtube.Search.GetVideosAsync(searchQuery);
                         await foreach (var result in searchResults)
                         {
                             videoUrl = result.Url;
-                            break; 
+                            break;
                         }
                     }
                 }
@@ -868,13 +868,13 @@ namespace ConverterApp
 
             var video = await youtube.Videos.GetAsync(videoUrl);
             string titleFile = Temizle(video.Title);
-            
+
             FolderBrowserDialog fbd = new FolderBrowserDialog();
-            
+
             if (fbd.ShowDialog() == DialogResult.OK)
             {
                 string targetPath = Path.Combine(fbd.SelectedPath, titleFile + "." + format.ToLower());
-                
+
                 await EnsureDependenciesAsync(lblYtStatus);
 
                 var streamManifest = await youtube.Videos.Streams.GetManifestAsync(videoUrl);
@@ -924,16 +924,16 @@ namespace ConverterApp
                             if (timeSpan.TotalSeconds >= 0.5)
                             {
                                 long bytesPerSec = Math.Max(0, (long)((currentBytes - lastBytes) / timeSpan.TotalSeconds));
-                                
-                                 if (val >= 99)
-                                 {
-                                     lblYtStatus.Text = "İşleniyor/Birleştiriliyor (Video ve Ses birleştiriliyor, lütfen bekleyin)...";
-                                 }
+
+                                if (val >= 99)
+                                {
+                                    lblYtStatus.Text = "İşleniyor/Birleştiriliyor (Video ve Ses birleştiriliyor, lütfen bekleyin)...";
+                                }
                                 else
                                 {
                                     lblYtStatus.Text = $"Indiriliyor: %{val} | Hiz: {FormatBytes(bytesPerSec)}/s";
                                 }
-                                
+
                                 lastUpdate = now;
                                 lastBytes = currentBytes;
                             }
@@ -993,14 +993,14 @@ namespace ConverterApp
         {
             string currentUrl = txtSocialUrl.Text;
             btnDownloadSocial.Enabled = false;
-            
+
             if (string.IsNullOrWhiteSpace(currentUrl) || !currentUrl.StartsWith("http")) return;
 
             if (currentUrl == lastSocialUrl) return;
             lastSocialUrl = currentUrl;
-            
+
             await Task.Delay(800);
-            
+
             if (txtSocialUrl.Text != currentUrl) return;
 
             await FetchSocialResolutionsAsync(currentUrl);
@@ -1039,7 +1039,7 @@ namespace ConverterApp
                         {
                             int h = (int)(f.Height ?? 0);
                             int w = (int)(f.Width ?? 0);
-                            
+
                             if (h > w && w > 0)
                             {
                                 cbSocialResolution.Items.Add(new ComboBoxItem { Text = $"{w}p", Value = h });
@@ -1120,7 +1120,7 @@ namespace ConverterApp
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
                     ytdl.OutputFolder = fbd.SelectedPath;
-            
+
                     var progress = new Progress<DownloadProgress>(p =>
                     {
                         Invoke(new Action(() =>

@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <AssemblyName>irdelix_converter</AssemblyName>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net9.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWindowsForms>true</UseWindowsForms>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <ApplicationIcon>irdelix_converter.ico</ApplicationIcon>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="14.13.1" />
+      <PackageReference Include="MaterialSkin.2" Version="2.3.1" />
+      <PackageReference Include="NReco.VideoConverter" Version="1.2.1" />
+      <PackageReference Include="YoutubeDLSharp" Version="1.2.0" />
+      <PackageReference Include="YoutubeExplode" Version="6.6.0" />
+      <PackageReference Include="YoutubeExplode.Converter" Version="6.6.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="irdelix_converter.ico" />
+    </ItemGroup>
+
+</Project>
