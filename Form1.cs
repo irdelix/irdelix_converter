@@ -31,7 +31,7 @@ namespace ConverterApp
         public override string ToString() { return Text; }
     }
 
-    public partial class Form1 : MaterialForm
+    public partial class Form1 : Form
     {
         // ====== DWM Immersive Dark Mode ======
         [DllImport("dwmapi.dll", PreserveSig = true)]
@@ -121,7 +121,6 @@ namespace ConverterApp
             };
 
             var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(
                 Primary.Green600, Primary.Green700, Primary.Green200, Accent.Green400, TextShade.WHITE
@@ -129,6 +128,7 @@ namespace ConverterApp
 
             // Apply immersive dark mode at startup
             SetImmersiveDarkMode(true);
+            this.BackColor = Color.FromArgb(50, 50, 50);
 
             // Auto resize and word wrap for status labels
             lblStatus.AutoSize = true;
@@ -168,13 +168,45 @@ namespace ConverterApp
             {
                 mgr.Theme = MaterialSkinManager.Themes.DARK;
                 SetImmersiveDarkMode(true);
+                this.BackColor = Color.FromArgb(50, 50, 50);
+                ApplyTabColors(Color.FromArgb(50, 50, 50), Color.FromArgb(55, 55, 55));
             }
             else
             {
                 mgr.Theme = MaterialSkinManager.Themes.LIGHT;
                 SetImmersiveDarkMode(false);
+                this.BackColor = Color.FromArgb(245, 245, 245);
+                ApplyTabColors(Color.FromArgb(245, 245, 245), Color.FromArgb(255, 255, 255));
             }
             UpdateDynamicIconColors();
+        }
+
+        private void ApplyTabColors(Color tabBg, Color cardBg)
+        {
+            foreach (TabPage tab in materialTabControl1.TabPages)
+            {
+                tab.BackColor = tabBg;
+            }
+            // Update card backgrounds
+            foreach (Control c in this.Controls)
+            {
+                UpdateCardColors(c, cardBg);
+            }
+        }
+
+        private void UpdateCardColors(Control parent, Color cardBg)
+        {
+            foreach (Control c in parent.Controls)
+            {
+                if (c is MaterialSkin.Controls.MaterialCard card)
+                {
+                    card.BackColor = cardBg;
+                }
+                if (c.HasChildren)
+                {
+                    UpdateCardColors(c, cardBg);
+                }
+            }
         }
 
         private void cbThemeColor_SelectedIndexChanged(object sender, EventArgs e)

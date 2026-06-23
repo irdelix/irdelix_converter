@@ -73,7 +73,7 @@ namespace ConverterApp
             this.materialTabSelector1.BaseTabControl = this.materialTabControl1;
             this.materialTabSelector1.Depth = 0;
             this.materialTabSelector1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTabSelector1.Location = new System.Drawing.Point(0, 64);
+            this.materialTabSelector1.Location = new System.Drawing.Point(0, 0);
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
             this.materialTabSelector1.Size = new System.Drawing.Size(800, 48);
@@ -85,12 +85,12 @@ namespace ConverterApp
             this.materialTabControl1.Controls.Add(this.tabSocial);
             this.materialTabControl1.Controls.Add(this.tabSettings);
             this.materialTabControl1.Depth = 0;
-            this.materialTabControl1.Location = new System.Drawing.Point(6, 118);
+            this.materialTabControl1.Location = new System.Drawing.Point(0, 48);
             this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(788, 326);
+            this.materialTabControl1.Size = new System.Drawing.Size(800, 352);
             this.materialTabControl1.TabIndex = 1;
 
             // ================================================================
@@ -104,7 +104,7 @@ namespace ConverterApp
             this.tabConverter.Location = new System.Drawing.Point(4, 24);
             this.tabConverter.Name = "tabConverter";
             this.tabConverter.Padding = new System.Windows.Forms.Padding(3);
-            this.tabConverter.Size = new System.Drawing.Size(780, 298);
+            this.tabConverter.Size = new System.Drawing.Size(792, 324);
             this.tabConverter.TabIndex = 0;
             this.tabConverter.Text = "\uE8B7 Dönüştürücü";
 
@@ -713,10 +713,13 @@ namespace ConverterApp
             // ================================================================
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 400);
             this.Controls.Add(this.materialTabControl1);
             this.Controls.Add(this.materialTabSelector1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = true;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Irdelix Converter";
             this.materialTabControl1.ResumeLayout(false);
             this.tabConverter.ResumeLayout(false);
