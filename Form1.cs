@@ -257,6 +257,8 @@ namespace ConverterApp
                     mgr.ColorScheme = new ColorScheme(Primary.Green600, Primary.Green700, Primary.Green200, Accent.Green400, TextShade.WHITE);
                     break;
             }
+            
+            this.Refresh();
         }
 
         // ====================================================================
