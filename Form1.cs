@@ -128,7 +128,6 @@ namespace ConverterApp
 
             // Apply immersive dark mode at startup
             SetImmersiveDarkMode(true);
-            this.BackColor = Color.FromArgb(50, 50, 50);
 
             // Auto resize and word wrap for status labels
             lblStatus.AutoSize = true;
@@ -145,6 +144,23 @@ namespace ConverterApp
 
             // Default output folder
             txtOutputFolder.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyVideos);
+
+            // Apply dark theme colors IMMEDIATELY at startup to prevent white flash
+            ApplyThemeColors(isDark: true);
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            
+            // Force the theme to apply correctly to all child controls after initialization
+            var mgr = MaterialSkinManager.Instance;
+            mgr.Theme = chkDarkMode.Checked ? MaterialSkinManager.Themes.DARK : MaterialSkinManager.Themes.LIGHT;
+            ApplyThemeColors(chkDarkMode.Checked);
+            UpdateDynamicIconColors();
+            
+            // Re-apply to ensure DWM is applied fully
+            SetImmersiveDarkMode(chkDarkMode.Checked);
         }
 
         // ====================================================================
@@ -164,37 +180,43 @@ namespace ConverterApp
         private void chkDarkMode_CheckedChanged(object sender, EventArgs e)
         {
             var mgr = MaterialSkinManager.Instance;
-            if (chkDarkMode.Checked)
-            {
-                mgr.Theme = MaterialSkinManager.Themes.DARK;
-                SetImmersiveDarkMode(true);
-                this.BackColor = Color.FromArgb(50, 50, 50);
-                ApplyTabColors(Color.FromArgb(50, 50, 50), Color.FromArgb(55, 55, 55));
-            }
-            else
-            {
-                mgr.Theme = MaterialSkinManager.Themes.LIGHT;
-                SetImmersiveDarkMode(false);
-                this.BackColor = Color.FromArgb(245, 245, 245);
-                ApplyTabColors(Color.FromArgb(245, 245, 245), Color.FromArgb(255, 255, 255));
-            }
-            UpdateDynamicIconColors();
+            bool isDark = chkDarkMode.Checked;
+
+            mgr.Theme = isDark ? MaterialSkinManager.Themes.DARK : MaterialSkinManager.Themes.LIGHT;
+            SetImmersiveDarkMode(isDark);
+            ApplyThemeColors(isDark);
         }
 
-        private void ApplyTabColors(Color tabBg, Color cardBg)
+        /// <summary>
+        /// Applies all background/card/listbox colors in one pass.
+        /// Dark tones matched to Windows DWM dark title bar (~32,32,32).
+        /// </summary>
+        private void ApplyThemeColors(bool isDark)
         {
+            // DWM dark title bar is approximately RGB(32,32,32)
+            Color formBg   = isDark ? Color.FromArgb(32, 32, 32)  : Color.FromArgb(243, 243, 243);
+            Color tabBg    = isDark ? Color.FromArgb(32, 32, 32)  : Color.FromArgb(243, 243, 243);
+            Color cardBg   = isDark ? Color.FromArgb(43, 43, 43)  : Color.FromArgb(255, 255, 255);
+            Color listBg   = isDark ? Color.FromArgb(50, 50, 50)  : Color.FromArgb(240, 240, 240);
+            Color listFg   = isDark ? Color.White                 : Color.Black;
+
+            this.BackColor = formBg;
+
+            // Tab pages
             foreach (TabPage tab in materialTabControl1.TabPages)
             {
                 tab.BackColor = tabBg;
             }
-            // Update card backgrounds
-            foreach (Control c in this.Controls)
-            {
-                UpdateCardColors(c, cardBg);
-            }
+
+            // Cards (recursive)
+            ApplyCardColors(this, cardBg);
+
+            // ListBox
+            lbFiles.BackColor = listBg;
+            lbFiles.ForeColor = listFg;
         }
 
-        private void UpdateCardColors(Control parent, Color cardBg)
+        private void ApplyCardColors(Control parent, Color cardBg)
         {
             foreach (Control c in parent.Controls)
             {
@@ -204,7 +226,7 @@ namespace ConverterApp
                 }
                 if (c.HasChildren)
                 {
-                    UpdateCardColors(c, cardBg);
+                    ApplyCardColors(c, cardBg);
                 }
             }
         }

@@ -96,7 +96,7 @@ namespace ConverterApp
             // ================================================================
             // ==================== TAB: DÖNÜŞTÜRÜCÜ ==========================
             // ================================================================
-            this.tabConverter.BackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            this.tabConverter.BackColor = System.Drawing.Color.FromArgb(32, 32, 32);
             this.tabConverter.Controls.Add(this.cardFileArea);
             this.tabConverter.Controls.Add(this.cardConverterSettings);
             this.tabConverter.Controls.Add(this.lblStatus);
@@ -109,7 +109,7 @@ namespace ConverterApp
             this.tabConverter.Text = "\uE8B7 Dönüştürücü";
 
             // --- cardFileArea ---
-            this.cardFileArea.BackColor = System.Drawing.Color.FromArgb(55, 55, 55);
+            this.cardFileArea.BackColor = System.Drawing.Color.FromArgb(43, 43, 43);
             this.cardFileArea.Depth = 0;
             this.cardFileArea.ForeColor = System.Drawing.Color.FromArgb(222, 0, 0, 0);
             this.cardFileArea.Location = new System.Drawing.Point(10, 10);
@@ -175,7 +175,7 @@ namespace ConverterApp
             this.btnRemoveFile.Click += new System.EventHandler(this.btnRemoveFile_Click);
 
             // --- cardConverterSettings ---
-            this.cardConverterSettings.BackColor = System.Drawing.Color.FromArgb(55, 55, 55);
+            this.cardConverterSettings.BackColor = System.Drawing.Color.FromArgb(43, 43, 43);
             this.cardConverterSettings.Depth = 0;
             this.cardConverterSettings.ForeColor = System.Drawing.Color.FromArgb(222, 0, 0, 0);
             this.cardConverterSettings.Location = new System.Drawing.Point(10, 158);
@@ -299,7 +299,7 @@ namespace ConverterApp
             // ================================================================
             // ==================== TAB: YOUTUBE/SPOTIFY =======================
             // ================================================================
-            this.tabYoutube.BackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            this.tabYoutube.BackColor = System.Drawing.Color.FromArgb(32, 32, 32);
             this.tabYoutube.Controls.Add(this.cardYtLink);
             this.tabYoutube.Controls.Add(this.lblYtStatus);
             this.tabYoutube.Controls.Add(this.progressBarYt);
@@ -312,7 +312,7 @@ namespace ConverterApp
             this.tabYoutube.Text = "\uE774 YouTube / Spotify";
 
             // --- cardYtLink ---
-            this.cardYtLink.BackColor = System.Drawing.Color.FromArgb(55, 55, 55);
+            this.cardYtLink.BackColor = System.Drawing.Color.FromArgb(43, 43, 43);
             this.cardYtLink.Depth = 0;
             this.cardYtLink.ForeColor = System.Drawing.Color.FromArgb(222, 0, 0, 0);
             this.cardYtLink.Location = new System.Drawing.Point(10, 10);
@@ -452,7 +452,7 @@ namespace ConverterApp
             // ================================================================
             // ==================== TAB: SOSYAL MEDYA =========================
             // ================================================================
-            this.tabSocial.BackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            this.tabSocial.BackColor = System.Drawing.Color.FromArgb(32, 32, 32);
             this.tabSocial.Controls.Add(this.cardSocialLink);
             this.tabSocial.Controls.Add(this.lblSocialStatus);
             this.tabSocial.Controls.Add(this.progressBarSocial);
@@ -465,7 +465,7 @@ namespace ConverterApp
             this.tabSocial.Text = "\uE909 Sosyal Medya";
 
             // --- cardSocialLink ---
-            this.cardSocialLink.BackColor = System.Drawing.Color.FromArgb(55, 55, 55);
+            this.cardSocialLink.BackColor = System.Drawing.Color.FromArgb(43, 43, 43);
             this.cardSocialLink.Depth = 0;
             this.cardSocialLink.ForeColor = System.Drawing.Color.FromArgb(222, 0, 0, 0);
             this.cardSocialLink.Location = new System.Drawing.Point(10, 10);
@@ -605,7 +605,7 @@ namespace ConverterApp
             // ================================================================
             // ==================== TAB: AYARLAR ==============================
             // ================================================================
-            this.tabSettings.BackColor = System.Drawing.Color.FromArgb(50, 50, 50);
+            this.tabSettings.BackColor = System.Drawing.Color.FromArgb(32, 32, 32);
             this.tabSettings.Controls.Add(this.cardSettings);
             this.tabSettings.Location = new System.Drawing.Point(4, 24);
             this.tabSettings.Name = "tabSettings";
@@ -615,7 +615,7 @@ namespace ConverterApp
             this.tabSettings.Text = "\uE713 Ayarlar";
 
             // --- cardSettings ---
-            this.cardSettings.BackColor = System.Drawing.Color.FromArgb(55, 55, 55);
+            this.cardSettings.BackColor = System.Drawing.Color.FromArgb(43, 43, 43);
             this.cardSettings.Depth = 0;
             this.cardSettings.ForeColor = System.Drawing.Color.FromArgb(222, 0, 0, 0);
             this.cardSettings.Location = new System.Drawing.Point(10, 10);
