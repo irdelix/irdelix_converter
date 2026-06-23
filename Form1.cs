@@ -59,6 +59,7 @@ namespace ConverterApp
 
             LoadMontserratFont();
             ApplySegoeIcons();
+            SetupSustainabilityFeatures();
 
             this.Activated += Form1_Activated;
 
@@ -840,8 +841,9 @@ namespace ConverterApp
             }
             catch (Exception ex)
             {
-                lblYtStatus.Text = "Hata: " + ex.Message;
+                lblYtStatus.Text = "Video işlenirken bir sorun oluştu.";
                 progressBarYt.Value = 0;
+                new ErrorForm("Video indirilirken bir hata oluştu, lütfen tekrar deneyiniz. Sorun devam etmesi halinde Ayarlar sekmesinden güncellemeleri kontrol ediniz.\n\nEğer bu durum güncellemelerle çözülmüyorsa, lütfen hatayı sisteme bildirin.", ex.Message, ex.StackTrace ?? "").ShowDialog();
             }
 
             btnDownloadYt.Enabled = true;
@@ -1306,13 +1308,13 @@ namespace ConverterApp
 
             if (!File.Exists(ffmpegPath))
             {
-                if (statusLabel != null) statusLabel.Text = "İlk indirme için gerekli video dönüştürücü bileşeni (FFmpeg) indiriliyor. Lütfen bekleyin...";
+                if (statusLabel != null) statusLabel.Text = "Uygulama için gerekli dosyalar hazırlanıyor. Lütfen bekleyin...";
                 await YoutubeDLSharp.Utils.DownloadFFmpeg(baseDir);
             }
 
             if (!File.Exists(ytdlPath))
             {
-                if (statusLabel != null) statusLabel.Text = "Video indirme motoru (yt-dlp) hazırlanıyor/güncelleniyor. Lütfen bekleyin...";
+                if (statusLabel != null) statusLabel.Text = "Uygulama için gerekli dosyalar hazırlanıyor. Lütfen bekleyin...";
                 await YoutubeDLSharp.Utils.DownloadYtDlp(baseDir);
             }
         }
@@ -1505,8 +1507,9 @@ namespace ConverterApp
             }
             catch (Exception ex)
             {
-                lblSocialStatus.Text = "Hata: " + ex.Message;
+                lblSocialStatus.Text = "Video işlenirken bir sorun oluştu.";
                 progressBarSocial.Value = 0;
+                new ErrorForm("Video indirilirken bir hata oluştu, lütfen tekrar deneyiniz. Sorun devam etmesi halinde Ayarlar sekmesinden güncellemeleri kontrol ediniz.\n\nEğer bu durum güncellemelerle çözülmüyorsa, lütfen hatayı sisteme bildirin.", ex.Message, ex.StackTrace ?? "").ShowDialog();
             }
             finally
             {
@@ -1553,6 +1556,98 @@ namespace ConverterApp
                             {
                                 txtSocialUrl.Text = clipText;
                                 materialTabControl1.SelectedTab = tabSocial;
+                            }
+                        }
+                    }
+                }
+            }
+            catch { }
+        }
+
+        // ====================================================================
+        // =================== SUSTAINABILITY / UPDATES =======================
+        // ====================================================================
+
+        private async void SetupSustainabilityFeatures()
+        {
+            if (this.tabSettings != null && this.tabSettings.Controls.Count > 0)
+            {
+                var cardSettings = this.tabSettings.Controls[0] as MaterialCard;
+                if (cardSettings != null)
+                {
+                    var btnUpdateEngines = new MaterialButton();
+                    btnUpdateEngines.Text = "Video Motorlarını Güncelle";
+                    btnUpdateEngines.Location = new System.Drawing.Point(20, 210); // Changed from 180 to 210
+                    btnUpdateEngines.AutoSize = false;
+                    btnUpdateEngines.Size = new System.Drawing.Size(300, 40);
+
+                    btnUpdateEngines.Click += async (s, e) =>
+                    {
+                        btnUpdateEngines.Enabled = false;
+                        string originalText = btnUpdateEngines.Text;
+                        btnUpdateEngines.Text = "Güncelleniyor. Lütfen bekleyin...";
+                        
+                        try
+                        {
+                            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+                            string ffmpegPath = Path.Combine(baseDir, FFmpegExecutableName);
+                            string ytdlPath = Path.Combine(baseDir, YtDlpExecutableName);
+                            
+                            if (File.Exists(ffmpegPath)) File.Delete(ffmpegPath);
+                            if (File.Exists(ytdlPath)) File.Delete(ytdlPath);
+                            
+                            await YoutubeDLSharp.Utils.DownloadFFmpeg(baseDir);
+                            await YoutubeDLSharp.Utils.DownloadYtDlp(baseDir);
+                            
+                            ShowToastNotification("Başarılı", "Video indirme ve dönüştürme motorları başarıyla güncellendi.");
+                        }
+                        catch (Exception ex)
+                        {
+                            new ErrorForm("Motorlar güncellenirken bir hata oluştu.", ex.Message, ex.StackTrace ?? "").ShowDialog();
+                        }
+                        finally
+                        {
+                            btnUpdateEngines.Text = originalText;
+                            btnUpdateEngines.Enabled = true;
+                        }
+                    };
+                    cardSettings.Controls.Add(btnUpdateEngines);
+                }
+            }
+
+            // Check for updates asynchronously on startup
+            await CheckForUpdatesAsync();
+        }
+
+        private async Task CheckForUpdatesAsync()
+        {
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    client.DefaultRequestHeaders.UserAgent.ParseAdd("irdelix_converter");
+                    var response = await client.GetAsync("https://api.github.com/repos/irdelix/irdelix_converter/releases/latest");
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string json = await response.Content.ReadAsStringAsync();
+                        using (var doc = JsonDocument.Parse(json))
+                        {
+                            var latestTag = doc.RootElement.GetProperty("tag_name").GetString();
+                            // Basit bir versiyon kontrolü, "v1.0.0" gibi farz ediyoruz. 
+                            // Mevcut versiyonu burada hardcode olarak tutuyoruz veya Assembly'den alıyoruz.
+                            string currentVersion = "v1.0.0"; // Bunu AssemblyInfo'dan da çekebiliriz ama şimdilik sabit
+                            
+                            if (latestTag != null && latestTag != currentVersion)
+                            {
+                                var result = MessageBox.Show($"Uygulamanın yeni bir sürümü ({latestTag}) mevcut. İndirme sayfasına gitmek ister misiniz?", "Yeni Sürüm Var", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                                if (result == DialogResult.Yes)
+                                {
+                                    Process.Start(new ProcessStartInfo
+                                    {
+                                        FileName = "https://github.com/irdelix/irdelix_converter/releases/latest",
+                                        UseShellExecute = true
+                                    });
+                                }
                             }
                         }
                     }
