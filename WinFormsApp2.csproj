@@ -14,6 +14,7 @@
       <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="14.13.1" />
       <PackageReference Include="MaterialSkin.2" Version="2.3.1" />
       <PackageReference Include="NReco.VideoConverter" Version="1.2.1" />
+      <PackageReference Include="TagLibSharp" Version="2.3.0" />
       <PackageReference Include="YoutubeDLSharp" Version="1.2.0" />
       <PackageReference Include="YoutubeExplode" Version="6.6.0" />
       <PackageReference Include="YoutubeExplode.Converter" Version="6.6.0" />
@@ -21,6 +22,12 @@
 
     <ItemGroup>
       <None Include="irdelix_converter.ico" />
+      <None Update="Resources\Montserrat-Regular.ttf">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Resources\Montserrat-Bold.ttf">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>

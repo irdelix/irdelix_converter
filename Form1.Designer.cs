@@ -1,4 +1,4 @@
-﻿namespace ConverterApp
+namespace ConverterApp
 {
     partial class Form1
     {
@@ -37,6 +37,7 @@
             this.tabSocial = new System.Windows.Forms.TabPage();
             this.txtSocialUrl = new MaterialSkin.Controls.MaterialTextBox();
             this.cbSocialResolution = new MaterialSkin.Controls.MaterialComboBox();
+            this.cbSocialFormat = new MaterialSkin.Controls.MaterialComboBox();
             this.btnDownloadSocial = new MaterialSkin.Controls.MaterialButton();
             this.lblSocialStatus = new MaterialSkin.Controls.MaterialLabel();
             this.progressBarSocial = new MaterialSkin.Controls.MaterialProgressBar();
@@ -345,6 +346,7 @@
             this.tabSocial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.tabSocial.Controls.Add(this.txtSocialUrl);
             this.tabSocial.Controls.Add(this.cbSocialResolution);
+            this.tabSocial.Controls.Add(this.cbSocialFormat);
             this.tabSocial.Controls.Add(this.btnDownloadSocial);
             this.tabSocial.Controls.Add(this.lblSocialStatus);
             this.tabSocial.Controls.Add(this.progressBarSocial);
@@ -393,6 +395,28 @@
             this.cbSocialResolution.Size = new System.Drawing.Size(160, 49);
             this.cbSocialResolution.StartIndex = 0;
             this.cbSocialResolution.TabIndex = 4;
+
+            this.cbSocialFormat.AutoResize = false;
+            this.cbSocialFormat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbSocialFormat.Depth = 0;
+            this.cbSocialFormat.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbSocialFormat.DropDownHeight = 174;
+            this.cbSocialFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSocialFormat.DropDownWidth = 121;
+            this.cbSocialFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbSocialFormat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbSocialFormat.FormattingEnabled = true;
+            this.cbSocialFormat.Hint = "Format";
+            this.cbSocialFormat.IntegralHeight = false;
+            this.cbSocialFormat.ItemHeight = 43;
+            this.cbSocialFormat.Items.AddRange(new object[] { "MP4", "MP3", "WAV" });
+            this.cbSocialFormat.Location = new System.Drawing.Point(600, 100);
+            this.cbSocialFormat.MaxDropDownItems = 4;
+            this.cbSocialFormat.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbSocialFormat.Name = "cbSocialFormat";
+            this.cbSocialFormat.Size = new System.Drawing.Size(160, 49);
+            this.cbSocialFormat.StartIndex = 0;
+            this.cbSocialFormat.TabIndex = 5;
 
             this.btnDownloadSocial.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnDownloadSocial.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
@@ -472,6 +496,7 @@
 
         private MaterialSkin.Controls.MaterialTextBox txtSocialUrl;
         private MaterialSkin.Controls.MaterialComboBox cbSocialResolution;
+        private MaterialSkin.Controls.MaterialComboBox cbSocialFormat;
         private MaterialSkin.Controls.MaterialButton btnDownloadSocial;
         private MaterialSkin.Controls.MaterialLabel lblSocialStatus;
         private MaterialSkin.Controls.MaterialProgressBar progressBarSocial;

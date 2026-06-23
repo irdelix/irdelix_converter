@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Drawing.Text;
 using System.Windows.Forms;
 using System.Threading.Tasks;
 using NReco.VideoConverter;
@@ -41,6 +42,12 @@ namespace ConverterApp
 
             btnDownloadYt.Enabled = false;
             btnDownloadSocial.Enabled = false;
+
+            LoadMontserratFont();
+
+            this.Activated += Form1_Activated;
+
+            cbSocialFormat.SelectedIndex = 0;
 
             cbYtResolution.Items.Clear();
             cbYtResolution.Items.Add(new ComboBoxItem { Text = "En Yuksek", Value = 0 });
@@ -265,6 +272,60 @@ namespace ConverterApp
                 btnRemoveFile_Click(sender ?? this, e);
             }
         }
+        private PrivateFontCollection privateFonts = new PrivateFontCollection();
+        private Font? montserratRegular;
+        private Font? montserratBold;
+
+        private void LoadMontserratFont()
+        {
+            try
+            {
+                string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+                string regPath = Path.Combine(baseDir, "Resources", "Montserrat-Regular.ttf");
+                string boldPath = Path.Combine(baseDir, "Resources", "Montserrat-Bold.ttf");
+
+                if (File.Exists(regPath)) privateFonts.AddFontFile(regPath);
+                if (File.Exists(boldPath)) privateFonts.AddFontFile(boldPath);
+
+                if (privateFonts.Families.Length > 0)
+                {
+                    montserratRegular = new Font(privateFonts.Families[0], 10f, FontStyle.Regular);
+                    montserratBold = new Font(privateFonts.Families[0], 10f, FontStyle.Bold);
+                    ApplyFontToControls(this, montserratRegular);
+                }
+            }
+            catch { }
+        }
+
+        private void ApplyFontToControls(Control parent, Font font)
+        {
+            foreach (Control c in parent.Controls)
+            {
+                if (c is MaterialSkin.Controls.MaterialTextBox || c is MaterialSkin.Controls.MaterialComboBox || 
+                    c is MaterialSkin.Controls.MaterialButton || c is MaterialSkin.Controls.MaterialLabel || c is MaterialSkin.Controls.MaterialCheckbox)
+                {
+                    c.Font = font;
+                }
+                if (c.HasChildren)
+                {
+                    ApplyFontToControls(c, font);
+                }
+            }
+        }
+
+        private void ShowToastNotification(string title, string message)
+        {
+            var notification = new NotifyIcon()
+            {
+                Visible = true,
+                Icon = SystemIcons.Information,
+                BalloonTipTitle = title,
+                BalloonTipText = message
+            };
+            notification.ShowBalloonTip(3000);
+            notification.Dispose();
+        }
+
         private void ResetResolutions()
         {
             cbYtResolution.Items.Clear();
@@ -491,9 +552,9 @@ namespace ConverterApp
             if (string.IsNullOrEmpty(txtUrl.Text)) return;
 
             btnDownloadYt.Enabled = false;
-            lblYtStatus.Text = "Bilgiler aliniyor...";
+            lblYtStatus.Text = "Bilgiler alınıyor...";
             var youtube = new YoutubeClient();
-            string url = txtUrl.Text;
+            string url = txtUrl.Text.Trim();
             string format = cbYtFormat.SelectedItem?.ToString() ?? "MP4";
 
             var resItem = cbYtResolution.SelectedItem as ComboBoxItem ?? new ComboBoxItem { Text = "En Yüksek", Value = 0 };
@@ -512,6 +573,9 @@ namespace ConverterApp
                 {
                     await DownloadSingleMedia(youtube, url, format, resItem);
                 }
+                
+                ShowToastNotification("Başarılı", "İndirme işlemi tamamlandı!");
+                lblYtStatus.Text = "İşlem tamamlandı.";
             }
             catch (Exception ex)
             {
@@ -1100,7 +1164,7 @@ namespace ConverterApp
             {
                 await EnsureDependenciesAsync(lblSocialStatus);
 
-                lblSocialStatus.Text = "Video bilgileri aliniyor...";
+                lblSocialStatus.Text = "Video bilgileri alınıyor...";
                 progressBarSocial.Value = 30;
 
                 var resItem = cbSocialResolution.SelectedItem as ComboBoxItem ?? new ComboBoxItem { Text = "En Yuksek", Value = 0 };
@@ -1126,42 +1190,92 @@ namespace ConverterApp
                         Invoke(new Action(() =>
                         {
                             progressBarSocial.Value = (int)(p.Progress * 100);
-                            lblSocialStatus.Text = $"Indiriliyor... Hiz: {p.DownloadSpeed}";
+                            lblSocialStatus.Text = $"İndiriliyor... Hız: {p.DownloadSpeed} | Kalan Süre: {p.ETA}";
                         }));
                     });
 
                     var options = new OptionSet()
                     {
-                        Format = formatSelection
+                        Format = formatSelection,
+                        MergeOutputFormat = DownloadMergeFormat.Mp4,
+                        NoPlaylist = true
                     };
 
-                    var downloadResult = await ytdl.RunVideoDownload(txtSocialUrl.Text, overrideOptions: options, progress: progress);
+                    if (cbSocialFormat.SelectedItem?.ToString() == "MP3")
+                    {
+                        options.ExtractAudio = true;
+                        options.AudioFormat = AudioConversionFormat.Mp3;
+                    }
+                    else if (cbSocialFormat.SelectedItem?.ToString() == "WAV")
+                    {
+                        options.ExtractAudio = true;
+                        options.AudioFormat = AudioConversionFormat.Wav;
+                    }
+
+                    var downloadResult = await ytdl.RunVideoDownload(txtSocialUrl.Text.Trim(), overrideOptions: options, progress: progress);
 
                     if (downloadResult.Success)
                     {
-                        lblSocialStatus.Text = "Indirme tamamlandi!";
+                        lblSocialStatus.Text = "İndirme tamamlandı!";
                         progressBarSocial.Value = 100;
+                        ShowToastNotification("Başarılı", "Video başarıyla indirildi!");
                     }
                     else
                     {
-                        lblSocialStatus.Text = "Indirme basarisiz oldu.";
-                        MessageBox.Show(string.Join("\n", downloadResult.ErrorOutput), "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        lblSocialStatus.Text = "Hata: İndirme işlemi başarısız. Video gizli veya silinmiş olabilir.";
+                        progressBarSocial.Value = 0;
                     }
                 }
                 else
                 {
-                    lblSocialStatus.Text = "Islem iptal edildi.";
+                    lblSocialStatus.Text = "İşlem iptal edildi.";
                 }
             }
             catch (Exception ex)
             {
-                lblSocialStatus.Text = "Hata olustu.";
-                MessageBox.Show(ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblSocialStatus.Text = "Hata: " + ex.Message;
+                progressBarSocial.Value = 0;
             }
             finally
             {
                 btnDownloadSocial.Enabled = true;
             }
+        }
+
+        private void Form1_Activated(object? sender, EventArgs e)
+        {
+            try
+            {
+                if (Clipboard.ContainsText())
+                {
+                    string clipText = Clipboard.GetText().Trim();
+                    if (Uri.IsWellFormedUriString(clipText, UriKind.Absolute))
+                    {
+                        if (clipText.Contains("youtube.com") || clipText.Contains("youtu.be") || clipText.Contains("spotify.com"))
+                        {
+                            if (string.IsNullOrWhiteSpace(txtUrl.Text) || !txtUrl.Text.Contains(clipText))
+                            {
+                                txtUrl.Text = clipText;
+                                materialTabControl1.SelectedTab = tabConverter;
+                                
+                                if (clipText.Contains("spotify.com") || clipText.Contains("music.youtube"))
+                                {
+                                    cbYtFormat.SelectedItem = "MP3";
+                                }
+                            }
+                        }
+                        else if (clipText.Contains("instagram.com") || clipText.Contains("tiktok.com") || clipText.Contains("twitter.com") || clipText.Contains("x.com"))
+                        {
+                            if (string.IsNullOrWhiteSpace(txtSocialUrl.Text) || !txtSocialUrl.Text.Contains(clipText))
+                            {
+                                txtSocialUrl.Text = clipText;
+                                materialTabControl1.SelectedTab = tabSocial;
+                            }
+                        }
+                    }
+                }
+            }
+            catch { }
         }
     }
 }
